@@ -1,0 +1,15 @@
+---
+version: '3.7'
+
+services:
+  tsdproxy:
+    image: ghcr.io/almeidapaulopt/tsdproxy@sha256:a541c83ddfc789d17723fa5c1f39a3d13bd2ccbac79bb3ea02929bf86d0607e8 
+    container_name: tsdproxy
+    restart: unless-stopped
+    volumes:
+      - ./data:/data
+      - ./config/:/config
+      - /run/user/1000/podman/podman.sock:/var/run/docker.sock
+      - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock
+    ports:
+      - "8080:8080"

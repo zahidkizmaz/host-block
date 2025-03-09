@@ -1,0 +1,51 @@
+---
+version: "3.7"
+
+services:
+  redis:
+    container_name: redis
+    image: docker.io/valkey/valkey:8-alpine@sha256:0fae58181c223280867e8b6d9d5fa29fca507770aeb6819f36d059cab73fa2fd
+    command: valkey-server --save 30 1 --loglevel warning
+    restart: unless-stopped
+    volumes:
+      - valkey-data2:/data
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+
+  searxng:
+    container_name: searxng
+    image: docker.io/searxng/searxng:2025.3.8-73d50f574@sha256:cb93f403c5a4d96f2b35d4935cc9fb96cf1fe9181b5c96d6ffa5801ecde41f57
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8081:8080"
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    environment:
+      - UWSGI_WORKERS=${SEARXNG_UWSGI_WORKERS:-4}
+      - UWSGI_THREADS=${SEARXNG_UWSGI_THREADS:-4}
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "1"
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "search"
+
+volumes:
+  valkey-data2:

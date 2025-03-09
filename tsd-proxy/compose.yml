@@ -13,3 +13,5 @@ services:
       - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock
     ports:
       - "8080:8080"
+    environment:
+      - STATE_DIRECTORY="/data"

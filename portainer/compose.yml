@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     container_name: portainer
     ports:
-      - "9443:9443"
+      - "9000:9000"
     volumes:
       - portainer_data:/data
       - /run/user/1000/podman/podman.sock:/var/run/docker.sock

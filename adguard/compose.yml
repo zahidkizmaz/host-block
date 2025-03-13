@@ -11,7 +11,7 @@ services:
       - 3000:3000/tcp  # initial setup web interface
     volumes:
       - ./data/work:/opt/adguardhome/work
-      - ./data/confdir:/opt/adguardhome/conf
+      - ./config:/opt/adguardhome/conf
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "ad"

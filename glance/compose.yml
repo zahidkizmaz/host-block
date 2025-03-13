@@ -9,7 +9,6 @@ services:
       - /run/user/1000/podman/podman.sock:/var/run/docker.sock
     ports:
       - 8080:8080
-    env_file: .env
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "home"

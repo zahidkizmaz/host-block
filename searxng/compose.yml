@@ -1,6 +1,4 @@
 ---
-version: "3.7"
-
 services:
   redis:
     container_name: redis
@@ -20,6 +18,8 @@ services:
       options:
         max-size: "1m"
         max-file: "1"
+    labels:
+      glance.hide: true
 
   searxng:
     container_name: searxng
@@ -40,6 +40,9 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "search"
+      glance.name: Searxng
+      glance.icon: si:searxng
+      glance.url: https://search.quoll-ratio.ts.net
 
 volumes:
   valkey-data2:

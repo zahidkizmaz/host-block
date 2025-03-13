@@ -1,6 +1,4 @@
 ---
-version: "3.7"
-
 services:
   portainer:
     image: docker.io/portainer/portainer-ce:lts@sha256:99c3047d44991af08f2a34df16e69ae2654bee43444b2e9857aa6b5864c4f602
@@ -16,6 +14,9 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "portainer"
+      glance.name: Portainer
+      glance.icon: si:portainer
+      glance.url: https://portainer.quoll-ratio.ts.net
 
 volumes:
   portainer_data:

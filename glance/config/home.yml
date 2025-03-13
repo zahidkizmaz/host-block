@@ -1,0 +1,22 @@
+- name: Home
+  width: slim
+  hide-desktop-navigation: true
+  columns:
+    - size: full
+      widgets:
+        - type: search
+          search-engine: "https://search.quoll-ratio.ts.net/search?q={QUERY}"
+          new-tab: true
+          auto-focus: true
+
+        - type: docker-containers
+          hide-by-default: false
+
+    - size: small
+      widgets:
+        - type: calendar
+          first-day-of-week: monday
+        - type: weather
+          location: Berlin, Germany
+          units: metric
+          hour-format: 24h

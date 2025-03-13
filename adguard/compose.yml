@@ -5,8 +5,8 @@ services:
     image: docker.io/adguard/adguardhome:v0.107.57@sha256:5c536c1e25f76693ae7ee5e64e8a029893e0f3f1778c8d2a9581383e60cfa9b9
     restart: unless-stopped
     ports:
-      - 53:53/tcp  # plain dns over tcp
-      - 53:53/udp  # plain dns over udp
+      - 5353:53/tcp  # plain dns over tcp
+      - 5353:53/udp  # plain dns over udp
       - 80:80/tcp  # http web interface
       - 3000:3000/tcp  # initial setup web interface
     volumes:

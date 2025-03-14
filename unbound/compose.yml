@@ -25,6 +25,11 @@ services:
           memory: 512M
         reservations:
           memory: 256M
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "unbound"
+      glance.name: Unbound
+      glance.url: https://unbound.quoll-ratio.ts.net
 
   valkey:
     container_name: valkey

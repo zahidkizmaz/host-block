@@ -5,26 +5,14 @@ services:
     image: docker.io/mvance/unbound:1.22.0@sha256:76906da36d1806f3387338f15dcf8b357c51ce6897fb6450d6ce010460927e90
     restart: unless-stopped
     volumes:
-      - ./unbound/conf:/opt/unbound/etc/unbound/
-      - ./unbound/data/cache:/opt/unbound/etc/unbound/cache
+      - ./unbound.conf:/opt/unbound/etc/unbound/unbound.conf:ro
     ports:
       - "5353:53/tcp"
       - "5353:53/udp"
     cap_add:
       - NET_ADMIN
-    healthcheck:
-      test: ["CMD", "dig", "@127.0.0.1", "duckduckgo.com"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 15s
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 512M
-        reservations:
-          memory: 256M
+    depends_on:
+      - valkey
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "unbound"
@@ -37,18 +25,9 @@ services:
     restart: unless-stopped
     volumes:
       - ./valkey/data:/data
-    ports:
-      - "6379:6379"
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 30s
       timeout: 5s
       retries: 3
       start_period: 10s
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 512M
-        reservations:
-          memory: 128M

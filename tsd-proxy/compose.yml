@@ -1,7 +1,7 @@
 ---
 services:
   tsdproxy:
-    image: ghcr.io/almeidapaulopt/tsdproxy@sha256:a541c83ddfc789d17723fa5c1f39a3d13bd2ccbac79bb3ea02929bf86d0607e8
+    image: ghcr.io/almeidapaulopt/tsdproxy@sha256:37606ffcb651e3402e1216aa6dbef2f451598ef6df0c207815618ddcf7e21d60
     container_name: tsdproxy
     restart: unless-stopped
     volumes:

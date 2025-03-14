@@ -1,2 +1,5 @@
 tsd-proxy/data/*
 data/
+valkey/data
+unbound/conf/
+!unbound/conf/unbound.conf

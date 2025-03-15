@@ -27,7 +27,7 @@ services:
 
   mariadb:
     container_name: homeassistant_db
-    image: docker.io/mariadb:lts-ubi@sha256:62a5cdf92e61e244bd77c194e623de3dddc44d98f02db81bf6fb4b3c7ce77463
+    image: docker.io/mariadb:lts-ubi@sha256:709e741342d15079bd35ec7db7cf9b207afd17ab99569f5604c2a7293743a4ef
     restart: unless-stopped
     volumes:
       - ./mariadb:/var/lib/mysql

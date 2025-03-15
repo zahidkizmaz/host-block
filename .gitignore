@@ -3,3 +3,9 @@ data/
 valkey/data
 unbound/conf/
 !unbound/conf/unbound.conf
+mariadb
+home-assistant/config/*
+!home-assistant/config/automations.yaml
+!home-assistant/config/scenes.yaml
+!home-assistant/config/configuration.yaml
+!home-assistant/config/scripts.yaml

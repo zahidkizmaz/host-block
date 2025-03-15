@@ -1,0 +1,45 @@
+---
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: ghcr.io/home-assistant/home-assistant:stable@sha256:3f47bf832efd81e0973ba3c5873907b2d178dc7377cc2f717e0b19396e9ca420
+    restart: unless-stopped
+    privileged: true  # Required for some hardware integrations
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "8123:8123"
+    environment:
+      - TZ=Europe/Berlin
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8123"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "ha"
+      glance.name: HomeAssistant
+      glance.icon: si:home-assistant
+      glance.url: https://ha.quoll-ratio.ts.net
+
+  mariadb:
+    container_name: homeassistant_db
+    image: docker.io/mariadb:lts-ubi@sha256:62a5cdf92e61e244bd77c194e623de3dddc44d98f02db81bf6fb4b3c7ce77463
+    restart: unless-stopped
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-homeassistant_root_password}
+      - MYSQL_DATABASE=homeassistant
+      - MYSQL_USER=homeassistant
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-homeassistant_password}
+    command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$MYSQL_ROOT_PASSWORD"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

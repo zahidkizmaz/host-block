@@ -6,6 +6,7 @@ services:
     restart: unless-stopped
     privileged: true  # Required for some hardware integrations
     volumes:
+      - /dev:/dev
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
     devices:

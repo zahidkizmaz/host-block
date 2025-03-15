@@ -20,3 +20,7 @@
           location: Berlin, Germany
           units: metric
           hour-format: 24h
+        - type: server-stats
+          servers:
+            - type: local
+              name: Services

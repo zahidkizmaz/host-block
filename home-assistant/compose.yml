@@ -24,6 +24,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "ha"
+      tsdproxy.container_port: 8123
       glance.name: HomeAssistant
       glance.icon: si:home-assistant
       glance.url: https://ha.quoll-ratio.ts.net

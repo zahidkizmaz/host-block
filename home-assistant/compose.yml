@@ -24,22 +24,3 @@ services:
       glance.name: HomeAssistant
       glance.icon: si:home-assistant
       glance.url: https://ha.quoll-ratio.ts.net
-
-  mariadb:
-    container_name: homeassistant_db
-    image: docker.io/mariadb:lts-ubi@sha256:62a5cdf92e61e244bd77c194e623de3dddc44d98f02db81bf6fb4b3c7ce77463
-    restart: unless-stopped
-    volumes:
-      - ./mariadb:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-homeassistant_root_password}
-      - MYSQL_DATABASE=homeassistant
-      - MYSQL_USER=homeassistant
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-homeassistant_password}
-    command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$MYSQL_ROOT_PASSWORD"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 30s

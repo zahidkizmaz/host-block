@@ -1,0 +1,19 @@
+---
+services:
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:2.19.5@sha256:4d383bfd61135492ab3c52fe98550b9640e7d0791ed2a5e81c98e4087f5086d0
+    ports:
+      - 13378:80
+    volumes:
+      - ./data/audiobooks:/audiobooks
+      - ./data/podcasts:/podcasts
+      - ./data/config:/config
+      - ./data/metadata:/metadata
+    environment:
+      - TZ=Europe/Berlin
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "abs"
+      glance.name: AudioBookShelf
+      glance.icon: si:audiobookshelf
+      glance.url: https://abs.quoll-ratio.ts.net

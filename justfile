@@ -11,6 +11,9 @@ up:
 up-update:
     ./manage-services.sh up --pull -d
 
+restart:
+    ./manage-services.sh restart
+
 down:
     ./manage-services.sh down
 

@@ -15,11 +15,7 @@ down:
     ./manage-services.sh down
 
 proxy-up:
-    cd ./tsd-proxy/
-    podman-compose up --pull -d
-    cd - >/dev/null
+    (cd ./tsd-proxy/ && podman-compose up --pull -d)
 
 proxy-down:
-    cd ./tsd-proxy/
-    podman-compose down
-    cd - >/dev/null
+    (cd ./tsd-proxy/ && podman-compose down)

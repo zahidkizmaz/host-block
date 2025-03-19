@@ -1,4 +1,4 @@
-alias b := backup-update
+alias b := backup
 alias upu := up-update
 alias pup := proxy-up
 alias pdown := proxy-down

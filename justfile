@@ -22,3 +22,6 @@ proxy-up:
 
 proxy-down:
     (cd ./tsd-proxy/ && podman-compose down)
+
+backuo:
+    restic backup .

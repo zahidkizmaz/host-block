@@ -20,6 +20,7 @@
           buildInputs = with pkgs; [
             just
             pre-commit
+            restic
           ];
         };
       }

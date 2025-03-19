@@ -1,14 +1,13 @@
----
 defaultProxyProvider: default
 docker:
-  local:  # name of the docker target provider
-    host: unix:///var/run/docker.sock  # host of the docker socket or daemon
-    targethostname: 172.31.0.1  # hostname or IP of docker server
-    defaultProxyProvider: default  # name of which proxy provider to use
+  local: # name of the docker target provider
+    host: unix:///var/run/docker.sock # host of the docker socket or daemon
+    targethostname: 172.31.0.1 # hostname or IP of docker server
+    defaultProxyProvider: default # name of which proxy provider to use
 files: {}
 tailscale:
   providers:
-    default:  # name of the provider
+    default: # name of the provider
       authKeyFile: "~/ts-auth.txt" # optional, use this to load authkey from file. If this is defined, Authkey is ignored
       controlUrl: https://controlplane.tailscale.com
   dataDir: /data/
@@ -16,6 +15,6 @@ http:
   hostname: 0.0.0.0
   port: 8080
 log:
-  level: info  # set logging level info, error or trace
-  json: true  # set to true to enable json logging
-proxyAccessLog: true  # set to true to enable container access log
+  level: info # set logging level info, error or trace
+  json: true # set to true to enable json logging
+proxyAccessLog: true # set to true to enable container access log

@@ -1,12 +1,8 @@
----
 server:
   assets-path: /app/assets
-
-pages:
-  # It's not necessary to create a new file for each page and include it, you can simply
-  # put its contents here, though multiple pages are easier to manage when separated
-  !include: home.yml
-
+pages: !include: home.yml
+# It's not necessary to create a new file for each page and include it, you can simply
+# put its contents here, though multiple pages are easier to manage when separated
 theme:
   background-color: 240 21 15
   contrast-multiplier: 1.2

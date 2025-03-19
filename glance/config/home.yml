@@ -8,10 +8,8 @@
           search-engine: "https://search.quoll-ratio.ts.net/search?q={QUERY}"
           new-tab: true
           auto-focus: true
-
         - type: docker-containers
           hide-by-default: false
-
     - size: small
       widgets:
         - type: calendar

@@ -1,11 +1,10 @@
----
 services:
   stirling-pdf:
     image: docker.io/stirlingtools/stirling-pdf:0.44.2-ultra-lite@sha256:ffb5e97ce2e15df6b0f447dc779c8dcc4dca5d2c546a40aedc1148ebf4d14369
     ports:
       - '8083:8080'
     volumes:
-      - ./StirlingPDF/trainingData:/usr/share/tessdata  # Required for extra OCR languages
+      - ./StirlingPDF/trainingData:/usr/share/tessdata # Required for extra OCR languages
       - ./StirlingPDF/extraConfigs:/configs
       - ./StirlingPDF/customFiles:/customFiles/
       - ./StirlingPDF/logs:/logs/

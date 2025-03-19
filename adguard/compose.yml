@@ -1,14 +1,13 @@
----
 services:
   adguard:
     container_name: adguard
     image: docker.io/adguard/adguardhome:v0.107.58@sha256:b9f635f51cec62205dd7bcae0d9bfffe3a33a6d30f3787d9fb7eb531281532d2
     restart: unless-stopped
     ports:
-      - 53:53/tcp  # plain dns over tcp
-      - 53:53/udp  # plain dns over udp
-      - 8088:80/tcp  # http web interface
-      - 3000:3000/tcp  # initial setup web interface
+      - 53:53/tcp # plain dns over tcp
+      - 53:53/udp # plain dns over udp
+      - 8088:80/tcp # http web interface
+      - 3000:3000/tcp # initial setup web interface
     cap_add:
       - NET_ADMIN
     volumes:
@@ -17,7 +16,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "ad"
-      tsdproxy.container_port: 80  # comment for the initial setup only
+      tsdproxy.container_port: 80 # comment for the initial setup only
       glance.name: Adguard
       glance.icon: si:adguardhome
       glance.url: https://ad.quoll-ratio.ts.net

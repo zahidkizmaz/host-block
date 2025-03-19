@@ -1,4 +1,3 @@
----
 services:
   portainer:
     image: docker.io/portainer/portainer-ce:lts@sha256:60ce692bb8b59963669294b751b39c82b4159fdaba24f68c06ee957d6c27a5ce
@@ -18,6 +17,5 @@ services:
       glance.name: Portainer
       glance.icon: si:portainer
       glance.url: https://portainer.quoll-ratio.ts.net
-
 volumes:
   portainer_data:

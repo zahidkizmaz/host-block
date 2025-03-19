@@ -1,3 +1,4 @@
+alias b := backup-update
 alias upu := up-update
 alias pup := proxy-up
 alias pdown := proxy-down
@@ -23,5 +24,5 @@ proxy-up:
 proxy-down:
     (cd ./tsd-proxy/ && podman-compose down)
 
-backuo:
+backup:
     restic backup .

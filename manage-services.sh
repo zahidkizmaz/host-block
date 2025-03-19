@@ -34,10 +34,9 @@ echo ""
 
 # Execute the operation on each compose file
 for DIR in $SERVICES; do
-  echo "Executing 'podman-compose $OPERATION' in $DIR"
-  cd "$DIR"
-  podman-compose "$OPERATION"
-  cd - >/dev/null
+  CMD="podman-compose $OPERATION"
+  echo "Executing '$CMD' in $DIR"
+  (cd "$DIR" && $CMD)
 done
 
 echo "All operations completed"

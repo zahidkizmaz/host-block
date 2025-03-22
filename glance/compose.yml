@@ -12,5 +12,5 @@ services:
       tsdproxy.enable: "true"
       tsdproxy.name: "home"
       glance.name: Glance
-      glance.icon: si:glance
+      glance.icon: di:glance
       glance.url: https://home.quoll-ratio.ts.net

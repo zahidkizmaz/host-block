@@ -15,5 +15,5 @@ services:
       tsdproxy.enable: "true"
       tsdproxy.name: "pdf"
       glance.name: StirlingPDF
-      glance.icon: si:stirling-pdf
+      glance.icon: di:stirling-pdf
       glance.url: https://pdf.quoll-ratio.ts.net

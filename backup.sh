@@ -63,7 +63,7 @@ prune_repository() {
   echo "Pruning repository: $repo"
 
   RESTIC_REPOSITORY="$repo" restic forget \
-    "$RETENTION_POLICY" --prune
+    $RETENTION_POLICY --prune
 
   echo "Pruning completed for repository: $repo"
 }

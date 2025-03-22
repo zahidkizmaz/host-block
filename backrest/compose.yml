@@ -4,14 +4,18 @@ services:
     container_name: backrest
     hostname: backrest
     volumes:
-      - ./data/data:/data
+      - /dev:/dev # To backup external drives
       - ./config:/config
+      - ./data/data:/data
       - ./data/cache:/cache
+      - ./data/tmp:/tmp
+      - ../../host-block:/userdata # Mount local paths to backup
     environment:
-      - BACKREST_DATA=/data
       - BACKREST_CONFIG=/config/config.json
-      - XDG_CACHE_HOME=/cache
+      - BACKREST_DATA=/data
+      - TMPDIR=/tmp
       - TZ=Europe/Berlin
+      - XDG_CACHE_HOME=/cache
     restart: unless-stopped
     ports:
       - 9898:9898

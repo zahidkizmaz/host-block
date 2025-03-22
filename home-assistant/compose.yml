@@ -8,8 +8,6 @@ services:
       - /dev:/dev
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
-    devices:
-      - /dev/ttyACM0:/dev/ttyACM0
     ports:
       - "8123:8123"
     environment:

@@ -1,0 +1,23 @@
+services:
+  backrest:
+    image: docker.io/garethgeorge/backrest:v1-scratch@sha256:0d997ac7bd19caf9f4e716225c8a65997e9e8e1ce5b7d376552cb8ab0b3a6c71
+    container_name: backrest
+    hostname: backrest
+    volumes:
+      - ./data/data:/data
+      - ./config:/config
+      - ./data/cache:/cache
+    environment:
+      - BACKREST_DATA=/data
+      - BACKREST_CONFIG=/config/config.json
+      - XDG_CACHE_HOME=/cache
+      - TZ=Europe/Berlin
+    restart: unless-stopped
+    ports:
+      - 9898:9898
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "back"
+      glance.name: BackRest
+      glance.icon: si:storage
+      glance.url: https://back.quoll-ratio.ts.net

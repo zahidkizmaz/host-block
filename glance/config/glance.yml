@@ -11,3 +11,5 @@ theme:
   positive-color: 115 54 76
   negative-color: 347 70 65
   custom-css-file: /assets/user.css
+branding:
+  hide-footer: true

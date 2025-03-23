@@ -8,6 +8,10 @@
           search-engine: "https://search.quoll-ratio.ts.net/search?q={QUERY}"
           new-tab: true
           auto-focus: true
+        - type: group
+          widgets:
+            - type: hacker-news
+            - type: lobsters
         - type: docker-containers
           hide-by-default: false
     - size: small

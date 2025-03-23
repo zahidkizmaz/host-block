@@ -19,6 +19,7 @@ services:
         max-file: "1"
     labels:
       glance.hide: true
+      glance.parent: searxng
   searxng:
     container_name: searxng
     image: docker.io/searxng/searxng:2025.3.8-73d50f574@sha256:cb93f403c5a4d96f2b35d4935cc9fb96cf1fe9181b5c96d6ffa5801ecde41f57
@@ -38,6 +39,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "search"
+      glance.id: searxng
       glance.name: Searxng
       glance.icon: si:searxng
       glance.url: https://search.quoll-ratio.ts.net

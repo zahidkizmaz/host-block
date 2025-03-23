@@ -21,6 +21,7 @@
             just
             pre-commit
             restic
+            rsync
           ];
         };
       }

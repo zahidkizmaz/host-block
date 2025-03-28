@@ -22,6 +22,12 @@
             pre-commit
             restic
             rsync
+
+            # LSPs and formatters
+            universal-ctags
+            nodePackages_latest.nodejs
+            typos-lsp
+            yaml-language-server
           ];
         };
       }

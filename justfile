@@ -2,6 +2,7 @@ alias b := backup
 alias upu := up-update
 alias pup := proxy-up
 alias pdown := proxy-down
+alias pub := pull-update-backup
 
 default:
     just --list
@@ -26,3 +27,11 @@ proxy-down:
 
 backup:
     ./backup.sh
+
+pull-update-backup:
+    pdown
+    down
+    backup
+    git pull
+    pup
+    up

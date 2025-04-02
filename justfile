@@ -28,10 +28,7 @@ proxy-down:
 backup:
     ./backup.sh
 
-pull-update-backup:
-    pdown
-    down
-    backup
+pull:
     git pull
-    pup
-    up
+
+pull-update-backup: proxy-down down pull backup proxy-up up

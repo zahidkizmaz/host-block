@@ -19,7 +19,7 @@ services:
       glance.icon: si:hoarder
       glance.url: https://link.quoll-ratio.ts.net
   chrome:
-    image: docker.io/zenika/alpine-chrome:123@sha256:e38563d4475a3d791e986500a2e4125c9afd13798067138881cf770b1f6f3980
+    image: docker.io/zenika/alpine-chrome:124@sha256:f6dd3b4480a88d777ee153da5f29aff7152ea64fe5b95cdea5405b41c7ff0cca
     restart: unless-stopped
     command:
       - --no-sandbox

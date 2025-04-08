@@ -11,3 +11,4 @@ home-assistant/config/*
 !home-assistant/config/scripts.yaml
 stirling-pdf/StirlingPDF/
 adguard/config
+beszel_data

@@ -1,0 +1,28 @@
+services:
+  beszel:
+    image: docker.io/henrygd/beszel:0.10@sha256:ea909d20f1526ae2ae27f616a9dcfbb3378f68e65873213dc74f5bbe38f4e863
+    container_name: beszel
+    restart: unless-stopped
+    ports:
+      - 8090:8090
+    volumes:
+      - ./beszel_data:/beszel_data
+      - ./beszel_socket:/beszel_socket
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "stats"
+      glance.name: Beszel
+      glance.icon: si:beszel
+      glance.url: https://stats.quoll-ratio.ts.net
+  beszel-agent:
+    image: docker.io/henrygd/beszel-agent:0.10@sha256:54d5cfc470ef1647980872b5d4a4bd70f6340051bfd0a5a1ffac3c6fd286574f
+    container_name: beszel-agent
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./beszel_socket:/beszel_socket
+      - /run/user/1000/podman/podman.sock:/var/run/docker.sock
+    environment:
+      LISTEN: /beszel_socket/beszel.sock
+      # Do not remove quotes around the key
+      KEY: 'UPDATE WITH YOUR PUBLIC KEY (copy from "Add system" dialog)'

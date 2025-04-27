@@ -3,6 +3,7 @@ alias upu := up-update
 alias pup := proxy-up
 alias pdown := proxy-down
 alias pub := pull-update-backup
+alias uu := update-all
 
 default:
     just --list
@@ -32,3 +33,5 @@ pull:
     git pull
 
 pull-update-backup: proxy-down down pull backup proxy-up up
+
+update-all: proxy-down down pull proxy-up up

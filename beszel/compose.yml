@@ -12,7 +12,7 @@ services:
       tsdproxy.enable: "true"
       tsdproxy.name: "stats"
       glance.name: Beszel
-      glance.icon: si:beszel
+      glance.icon: di:beszel
       glance.url: https://stats.quoll-ratio.ts.net
   beszel-agent:
     image: docker.io/henrygd/beszel-agent:0.10@sha256:54d5cfc470ef1647980872b5d4a4bd70f6340051bfd0a5a1ffac3c6fd286574f

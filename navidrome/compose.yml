@@ -11,5 +11,5 @@ services:
       tsdproxy.enable: "true"
       tsdproxy.name: "music"
       glance.name: Navidrome
-      glance.icon: si:navidrome
+      glance.icon: di:navidrome
       glance.url: https://music.quoll-ratio.ts.net

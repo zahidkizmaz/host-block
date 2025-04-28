@@ -15,7 +15,7 @@ services:
       tsdproxy.name: "portainer"
       tsdproxy.container_port: 9000
       glance.name: Portainer
-      glance.icon: si:portainer
+      glance.icon: di:portainer
       glance.url: https://portainer.quoll-ratio.ts.net
 volumes:
   portainer_data:

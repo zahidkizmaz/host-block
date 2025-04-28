@@ -18,5 +18,5 @@ services:
       tsdproxy.name: "ad"
       tsdproxy.container_port: 80 # comment for the initial setup only
       glance.name: Adguard
-      glance.icon: si:adguard
+      glance.icon: di:adguard-home
       glance.url: https://ad.quoll-ratio.ts.net

@@ -11,6 +11,7 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "stats"
+      glance.id: beszel
       glance.name: Beszel
       glance.icon: di:beszel
       glance.url: https://stats.quoll-ratio.ts.net
@@ -26,3 +27,6 @@ services:
       LISTEN: /beszel_socket/beszel.sock
       # Do not remove quotes around the key
       KEY: 'UPDATE WITH YOUR PUBLIC KEY (copy from "Add system" dialog)'
+    labels:
+      glance.hide: true
+      glance.parent: beszel

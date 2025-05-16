@@ -1,0 +1,19 @@
+services:
+  gonic:
+    image: ghcr.io/sentriz/gonic@sha256:d2c6968a00dca62f7dd84af500ac9d2e8421c543bf3aed34c03b3d241f41076a
+    environment:
+      - TZ=Europe/Berlin
+    ports:
+      - 4747:80
+    volumes:
+      - ./data/data:/data
+      - ./data/music:/music:ro # your music
+      - ./data/podcasts:/podcasts # your podcasts
+      - ./data/playlists:/playlists # your playlists
+      - ./data/cache:/cache # transcode / covers / etc cache dir
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "gonic"
+      glance.name: Gonic
+      glance.icon: di:gonic
+      glance.url: https://gonic.quoll-ratio.ts.net

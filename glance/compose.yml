@@ -1,7 +1,7 @@
 services:
   glance:
     container_name: glance
-    image: docker.io/glanceapp/glance:v0.8.2@sha256:fe80231892d3b7d7a2770a58d8058c190ac1c27eb806f5e2f09ee4cf101780eb
+    image: docker.io/glanceapp/glance:v0.8.4@sha256:6df86a7e8868d1eda21f35205134b1962c422957e42a0c44d4717c8e8f741b1a
     volumes:
       - ./config:/app/config
       - ./assets:/app/assets

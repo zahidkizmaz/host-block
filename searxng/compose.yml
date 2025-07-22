@@ -1,7 +1,7 @@
 services:
   redis:
     container_name: redis
-    image: docker.io/valkey/valkey:8-alpine@sha256:f43639a6811342b5db26475f3463d4d1950d07bf05542d9483159a44be1fe62f
+    image: docker.io/valkey/valkey:8-alpine@sha256:0d27f0bca0249f61d060029a6aaf2e16b2c417d68d02a508e1dfb763fa2948b4
     command: valkey-server --save 30 1 --loglevel warning
     restart: unless-stopped
     volumes:

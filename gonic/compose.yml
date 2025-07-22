@@ -1,6 +1,6 @@
 services:
   gonic:
-    image: ghcr.io/sentriz/gonic@sha256:d2c6968a00dca62f7dd84af500ac9d2e8421c543bf3aed34c03b3d241f41076a
+    image: ghcr.io/sentriz/gonic@sha256:22e2c9de7a95606f196e1828e6ba0224aa29245cba42cb19eeb4322f6dae4c7b
     environment:
       - TZ=Europe/Berlin
     ports:

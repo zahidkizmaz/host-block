@@ -1,6 +1,6 @@
 services:
   stirling-pdf:
-    image: docker.io/stirlingtools/stirling-pdf:0.46.1-ultra-lite@sha256:b62a1ce9191cecdbe260798a699d35ac2ba71cc71a1505e20f74c580321d6795
+    image: docker.io/stirlingtools/stirling-pdf:1.0.2-ultra-lite@sha256:47c91c9080308674ecb6be7c1e280c743240cef1f478af4cdad4a1b5ba636aa3
     ports:
       - '8083:8080'
     volumes:

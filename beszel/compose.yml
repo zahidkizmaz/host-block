@@ -16,7 +16,7 @@ services:
       glance.icon: di:beszel
       glance.url: https://stats.quoll-ratio.ts.net
   beszel-agent:
-    image: docker.io/henrygd/beszel-agent:0.11@sha256:7ad7ddde5c6fffa57a85318c24322bc9100ee01c85c5f7189d229051b05fe7e2
+    image: docker.io/henrygd/beszel-agent:0.12@sha256:06e0b1697a3e4d8060b6bae69ed8edca3136d5a6585dc919166e28aa7b59d7d8
     container_name: beszel-agent
     restart: unless-stopped
     network_mode: host

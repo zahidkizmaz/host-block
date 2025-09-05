@@ -1,7 +1,7 @@
 services:
   homeassistant:
     container_name: homeassistant
-    image: ghcr.io/home-assistant/home-assistant:2025.7@sha256:e5bf3905955081dc4aae3b3980870c43ce6d8ffb880b5447addb3b3ba00f7bc0
+    image: ghcr.io/home-assistant/home-assistant:2025.9@sha256:816b80788e81b517c477a200a47f3d7e882cc2b9b0504f616957a19f59518d2f
     restart: unless-stopped
     privileged: true # Required for some hardware integrations
     volumes:

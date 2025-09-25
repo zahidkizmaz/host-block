@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: docker.io/portainer/portainer-ce:lts@sha256:f4c59b58fd64499295e59b1665bbd9af0cf9e823258f84859510db3263718142
+    image: docker.io/portainer/portainer-ce:lts@sha256:264443d4063e0f2633f3ba210ccd69aacf07344dfc792128131dec8963df0f0a
     command: --http-enabled
     restart: unless-stopped
     container_name: portainer
